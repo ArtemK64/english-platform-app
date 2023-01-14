@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Future Continuous</title>
+  <link th:href="@{/css/exercises/tense-form.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="form">
+  <video autoplay loop class="form-background-video" muted playsinline>
+    <source src="/videos/background-video.mp4" type="video/mp4">
+  </video>
+  <div class="form-title">Заполните пропуски. Используйте время Future Continuous</div>
+  <form th:action="@{/exercises/future-continuous}" th:object="${futureContinuousTense}" th:method="patch">
+    <div class="form-content">
+      <div class="form-field">
+        1. Tomorrow at eight o'clock I <input type="text" th:field="*{firstAnswer}" class="form-fields-input"> at the warehouse (to work).
+        <div style="color:red" th:if="${#fields.hasErrors('firstAnswer')}" th:errors="*{firstAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        2. This time next Tuesday Andrew <input type="text" th:field="*{secondAnswer}" class="form-fields-input"> his first lesson (to give).
+        <div style="color:red" th:if="${#fields.hasErrors('secondAnswer')}" th:errors="*{secondAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        3. They <input type="text" th:field="*{thirdAnswer}" class="form-fields-input"> all night (to dance).
+        <div style="color:red" th:if="${#fields.hasErrors('thirdAnswer')}" th:errors="*{thirdAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        4. I <input type="text" th:field="*{fourthAnswer}" class="form-fields-input"> at midnight (not to sleep).
+        <div style="color:red" th:if="${#fields.hasErrors('fourthAnswer')}" th:errors="*{fourthAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        5. The players <input type="text" th:field="*{fifthAnswer}" class="form-fields-input"> on this field in an hour (to practice).
+        <div style="color:red" th:if="${#fields.hasErrors('fifthAnswer')}" th:errors="*{fifthAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        <input type="submit" value="Отправить ответы" class="form-input-button">
+      </div>
+      <a href="https://langformula.ru/english-grammar/future-continuous-exercise/">Упражнение взято из данного ресурса</a>
+    </div>
+  </form>
+</div>
+</body>
+</html>

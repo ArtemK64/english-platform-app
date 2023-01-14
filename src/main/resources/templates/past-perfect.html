@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Past Perfect</title>
+    <link th:href="@{/css/exercises/tense-form.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="form">
+    <video autoplay loop class="form-background-video" muted playsinline>
+        <source src="/videos/background-video.mp4" type="video/mp4">
+    </video>
+    <div class="form-title">Заполните пропуски. Используйте время Past Perfect</div>
+    <form th:action="@{/exercises/past-perfect}" th:object="${pastPerfectTense}" th:method="patch">
+        <div class="form-content">
+            <div class="form-field">
+                1. They <input type="text" th:field="*{firstAnswer}" class="form-fields-input"> the task by 2 pm yesterday (finish).
+                <div style="color:red" th:if="${#fields.hasErrors('firstAnswer')}" th:errors="*{firstAnswer}"></div>
+            </div>
+
+            <div class="form-field">
+                2. He <input type="text" th:field="*{secondAnswer}" class="form-fields-input"> the flat before the guests came (clean).
+                <div style="color:red" th:if="${#fields.hasErrors('secondAnswer')}" th:errors="*{secondAnswer}"></div>
+            </div>
+
+            <div class="form-field">
+                3. Sue <input type="text" th:field="*{thirdAnswer}" class="form-fields-input"> her work before her boss called (do).
+                <div style="color:red" th:if="${#fields.hasErrors('thirdAnswer')}" th:errors="*{thirdAnswer}"></div>
+            </div>
+
+            <div class="form-field">
+                4. Joe gave Marie a present after they <input type="text" th:field="*{fourthAnswer}" class="form-fields-input"> dinner (have).
+                <div style="color:red" th:if="${#fields.hasErrors('fourthAnswer')}" th:errors="*{fourthAnswer}"></div>
+            </div>
+
+            <div class="form-field">
+                5. Kate <input type="text" th:field="*{fifthAnswer}" class="form-fields-input"> hard for the test, so she didn’t fail (study).
+                <div style="color:red" th:if="${#fields.hasErrors('fifthAnswer')}" th:errors="*{fifthAnswer}"></div>
+            </div>
+
+            <div class="form-field">
+                <input type="submit" value="Отправить ответы" class="form-input-button">
+            </div>
+            <a href="https://englishweb.ru/grammar/past-perfect-exercises.html">Упражнение взято из данного ресурса</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Past Simple</title>
+    <link th:href="@{/css/exercises/tense-form.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="form">
+    <video autoplay loop class="form-background-video" muted playsinline>
+        <source src="/videos/background-video.mp4" type="video/mp4">
+    </video>
+    <div class="form-title">Заполните пропуски. Используйте время Past Simple</div>
+    <form th:action="@{/exercises/past-simple}" th:object="${pastSimpleTense}" th:method="patch">
+        <div class="form-content">
+            <div class="form-field">
+                1. I <input type="text" th:field="*{firstAnswer}" class="form-fields-input"> in a bank. (work)
+                <div style="color:red" th:if="${#fields.hasErrors('firstAnswer')}" th:errors="*{firstAnswer}"></div>
+            </div>
+
+            <div class="form-field">
+                2. Harry <input type="text" th:field="*{secondAnswer}" class="form-fields-input"> in London. (live)
+                <div style="color:red" th:if="${#fields.hasErrors('secondAnswer')}" th:errors="*{secondAnswer}"></div>
+            </div>
+
+            <div class="form-field">
+                3. My cat <input type="text" th:field="*{thirdAnswer}" class="form-fields-input"> fish every day. (eat)
+                <div style="color:red" th:if="${#fields.hasErrors('thirdAnswer')}" th:errors="*{thirdAnswer}"></div>
+            </div>
+
+            <div class="form-field">
+                4. Linda <input type="text" th:field="*{fourthAnswer}" class="form-fields-input"> a shower every morning. (take)
+                <div style="color:red" th:if="${#fields.hasErrors('fourthAnswer')}" th:errors="*{fourthAnswer}"></div>
+            </div>
+
+            <div class="form-field">
+                5. We <input type="text" th:field="*{fifthAnswer}" class="form-fields-input"> our parents once a week. (visit)
+                <div style="color:red" th:if="${#fields.hasErrors('fifthAnswer')}" th:errors="*{fifthAnswer}"></div>
+            </div>
+
+            <div class="form-field">
+                <input type="submit" value="Отправить ответы" class="form-input-button">
+            </div>
+            <a href="https://englishweb.ru/grammar/present-simple-exercises.html">Упражнение взято из данного ресурса</a>
+        </div>
+    </form>
+</div>
+</body>
+</html>

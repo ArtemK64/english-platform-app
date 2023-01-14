@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Future Simple</title>
+  <link th:href="@{/css/exercises/tense-form.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="form">
+  <video autoplay loop class="form-background-video" muted playsinline>
+    <source src="/videos/background-video.mp4" type="video/mp4">
+  </video>
+  <div class="form-title">Заполните пропуски. Используйте время Future Simple</div>
+  <form th:action="@{/exercises/future-simple}" th:object="${futureSimpleTense}" th:method="patch">
+    <div class="form-content">
+      <div class="form-field">
+        1. They <input type="text" th:field="*{firstAnswer}" class="form-fields-input"> the test at this time yesterday (to write).
+        <div style="color:red" th:if="${#fields.hasErrors('firstAnswer')}" th:errors="*{firstAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        2. He <input type="text" th:field="*{secondAnswer}" class="form-fields-input"> in the garden from six till nine o'clock (to work).
+        <div style="color:red" th:if="${#fields.hasErrors('secondAnswer')}" th:errors="*{secondAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        3. We <input type="text" th:field="*{thirdAnswer}" class="form-fields-input"> television the whole evening (to watch).
+        <div style="color:red" th:if="${#fields.hasErrors('thirdAnswer')}" th:errors="*{thirdAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        4. Were you <input type="text" th:field="*{fourthAnswer}" class="form-fields-input"> chess at six o'clock (to play)?
+        <div style="color:red" th:if="${#fields.hasErrors('fourthAnswer')}" th:errors="*{fourthAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        5. Were you <input type="text" th:field="*{fifthAnswer}" class="form-fields-input"> tea at seven o'clock (to drink)?
+        <div style="color:red" th:if="${#fields.hasErrors('fifthAnswer')}" th:errors="*{fifthAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        <input type="submit" value="Отправить ответы" class="form-input-button">
+      </div>
+      <a href="https://englishweb.ru/grammar/future-simple-exercises.html">Упражнение взято из данного ресурса</a>
+    </div>
+  </form>
+</div>
+</body>
+</html>

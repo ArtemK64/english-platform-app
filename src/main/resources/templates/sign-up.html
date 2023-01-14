@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Регистрация</title>
+    <link th:href="@{/css/sign-up.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="form">
+    <video autoplay loop class="form-background-video" muted playsinline>
+        <source src="videos/background-video.mp4" type="video/mp4">
+    </video>
+    <div class="form-title">Зарегистрироваться</div>
+    <form th:action="@{/sign-up}" th:object="${account}" th:method="patch">
+        <div class="form-content">
+            <div class="form-field">
+                <label>Имя</label>
+                <input type="text" th:field="*{firstName}" class="form-fields-input">
+                <div style="color:red" th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}"></div>
+            </div>
+
+            <div class="form-field">
+                <label>Фамилия</label>
+                <input type="text" th:field="*{lastName}" class="form-fields-input">
+                <div style="color:red" th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}"></div>
+            </div>
+
+            <div class="form-field">
+                <label>Уровень английского (A1, A2, B1, B2, C1, C2)</label>
+                <input type="text" th:field="*{levelOfEnglish}" class="form-fields-input">
+                <div style="color:red" th:if="${#fields.hasErrors('levelOfEnglish')}" th:errors="*{levelOfEnglish}"></div>
+            </div>
+
+            <div class="form-field">
+                <label>Электронная почта</label>
+                <input type="text" th:field="*{email}" class="form-fields-input">
+                <div style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></div>
+            </div>
+
+            <div class="form-field">
+                <label>Придумайте пароль</label>
+                <input type="text" th:field="*{password}" class="form-fields-input">
+                <div style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></div>
+            </div>
+
+            <div class="form-field">
+                <input type="submit" value="Подтвердить" class="form-input-button">
+            </div>
+            <div class="font-link">
+                <a href="sign-in">Войти в уже существующий аккаунт</a>
+            </div>
+        </div>
+    </form>
+</div>
+</body>
+</html>

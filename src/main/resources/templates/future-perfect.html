@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Future Perfect</title>
+  <link th:href="@{/css/exercises/tense-form.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="form">
+  <video autoplay loop class="form-background-video" muted playsinline>
+    <source src="/videos/background-video.mp4" type="video/mp4">
+  </video>
+  <div class="form-title">Заполните пропуски. Используйте время Future Perfect</div>
+  <form th:action="@{/exercises/future-perfect}" th:object="${futurePerfectTense}" th:method="patch">
+    <div class="form-content">
+      <div class="form-field">
+        1. I <input type="text" th:field="*{firstAnswer}" class="form-fields-input"> a Londoner for five and a half years by next September (be).
+        <div style="color:red" th:if="${#fields.hasErrors('firstAnswer')}" th:errors="*{firstAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        2. By Tuesday Jill <input type="text" th:field="*{secondAnswer}" class="form-fields-input"> these novels by O'Henry (finish).
+        <div style="color:red" th:if="${#fields.hasErrors('secondAnswer')}" th:errors="*{secondAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        3. Next year is Fred and Kate’s 10th wedding anniversary. They <input type="text" th:field="*{thirdAnswer}" class="form-fields-input">  happily married for ten years (be).
+        <div style="color:red" th:if="${#fields.hasErrors('thirdAnswer')}" th:errors="*{thirdAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        4. Molly thinks the film <input type="text" th:field="*{fourthAnswer}" class="form-fields-input">  by the time she gets to Fred's (to start).
+        <div style="color:red" th:if="${#fields.hasErrors('fourthAnswer')}" th:errors="*{fourthAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        5. They <input type="text" th:field="*{fifthAnswer}" class="form-fields-input">  the plans by then (to finish).
+        <div style="color:red" th:if="${#fields.hasErrors('fifthAnswer')}" th:errors="*{fifthAnswer}"></div>
+      </div>
+
+      <div class="form-field">
+        <input type="submit" value="Отправить ответы" class="form-input-button">
+      </div>
+      <a href="http://grammar-tei.com/future-perfect-uprazhneniya-s-otvetami/">Упражнение взято из данного ресурса</a>
+    </div>
+  </form>
+</div>
+</body>
+</html>
